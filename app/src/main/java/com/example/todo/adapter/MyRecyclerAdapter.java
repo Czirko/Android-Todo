@@ -20,17 +20,25 @@ import java.util.List;
 
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
     private List<TodoItem> items;
-    private Context context;
+
 
     public MyRecyclerAdapter(List<TodoItem> items, Context context) {
         this.items = items;
-        this.context = context;
+
+    }
+
+    public MyRecyclerAdapter() {
+    }
+
+    public MyRecyclerAdapter(List<TodoItem> items) {
+        this.items = items;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_item,
+       View v= LayoutInflater.from(parent.getContext())
+               .inflate(R.layout.recyclerview_item,
                parent,false);
        return new ViewHolder(v);
     }
@@ -56,6 +64,15 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     @Override
     public int getItemCount() {
         return items.size();
+    }
+
+    public  void setItems(List<TodoItem> items){
+        this.items=items;
+        notifyDataSetChanged();
+    }
+
+    public TodoItem getNoteAt(int pos){
+        return items.get(pos);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {

@@ -1,40 +1,34 @@
 package com.example.todo.model;
 
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity(tableName = "todo_table")
 public class TodoItem implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
     private int id;
+
     private String todo;
+
     private String date;
+
     private boolean done;
+
     private boolean express;
 
-    public TodoItem() {
-        this.done=false;
-        this.id=-1;
-    }
 
-    public TodoItem(int id, String todo, boolean express) {
-        this.id = id;
-        this.todo = todo;
-        this.express = express;
-        this.done=false;
-    }
-
-    public TodoItem(String todo,String date, boolean express) {
-        this.todo = todo;
-        this.date=date;
-        this.express = express;
-        this.done=false;
-        this.id=-1;
-    }
-
-    public TodoItem(int id, String todo, String date, boolean done, boolean express) {
-        this.id = id;
+    public TodoItem(String todo, String date, boolean done, boolean express) {
         this.todo = todo;
         this.date = date;
         this.done = done;
         this.express = express;
+    }
+    @Ignore
+    public TodoItem() {
     }
 
     public int getId() {

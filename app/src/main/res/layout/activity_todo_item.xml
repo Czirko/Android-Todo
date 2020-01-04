@@ -1,78 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TodoItemActivity"
-    android:orientation="vertical">
+    android:padding="16dp"
+    tools:context=".TodoItemActivity">
 
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:padding="8dp">
 
         <EditText
+
+            android:id="@+id/etTodo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/etTodo"
-            android:hint="Mit"/></LinearLayout>
-
-    <LinearLayout
-        android:gravity="center"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            android:ellipsize="start"
+            android:hint="@string/mit" />
 
 
         <Button
             android:id="@+id/btnDate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nyorj a dátum beállításához"
+            android:layout_below="@+id/etTodo"
+            android:text="@string/nyorj_a_d_tum_be_ll_t_s_hoz"
 
 
             />
+
         <Switch
             android:id="@+id/switchExpress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+
+            android:layout_below="@+id/etTodo"
+            android:layout_alignParentEnd="true"
             android:text="@string/fontos" />
 
 
+        <!-- <Button
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:onClick="cancel"
+             android:text="@string/m_gse"
+             android:layout_marginRight="5dp"
+             />
 
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:gravity="right"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="cancel"
-            android:text="@string/m_gse"
-            android:layout_marginRight="5dp"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="ok"
-            android:text="@string/ment_s"
-            android:layout_marginRight="5dp"/>
+         <Button
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:onClick="ok"
+             android:text="@string/ment_s"
+             android:layout_marginRight="5dp"/>-->
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -2,10 +2,14 @@
     <string name="app_name">Todo</string>
     <string name="action_settings">Settings</string>
     <string name="Todo" />
-    <string name="mit">Mit</string>
+
     <string name="fontos">Fontos?</string>
     <string name="ment_s">Mentés</string>
     <string name="m_gse">Mégse</string>
     <string name="j_elem_felv_tele">Új elem felvétele</string>
     <string name="sszes_elem_t_rl_se">Összes elem törlése</string>
+    <string name="save">save</string>
+    <string name="Add_todo">Add Todo</string>
+    <string name="mit">Mit</string>
+    <string name="nyorj_a_d_tum_be_ll_t_s_hoz">Nyorj a dátum beállításához</string>
 </resources>
